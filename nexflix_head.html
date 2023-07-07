@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXFLIX</title>
+    <link rel="stylesheet" href="nexflix_head_style.css">
+</head>
+<body>
+    <div class="showcase">
+       <div class="showcase-top">
+
+            <div class="navbar">
+                <div class="logo">NEXFLIX</div>
+                <div class="logo-righ">
+                    <button class="english">korean</button>
+                    <button class="sign-in" onclick="location.href='loginForm/login.html'">Sign In</button>
+                </div>
+            </div>
+            <div class="title-container">
+                <div class="title-up">
+                    <h1>NEXFLIX</h1>
+                    <h2>Unlimited Games</h2>
+                    <h3 class="watch">Play anywhere. Cancel anytime</h3>
+                    <p>Ready to play? Enter your email to create or restart your membership.</p>
+                    <div class="email-signup">
+                        <input type="email" placeholder="Email address" required id="emailvalue">
+                        <button id="heademail">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var heademail = document.getElementById("heademail");
+        var emailvalue = document.getElementById("emailvalue");
+        heademail.onclick = function() {
+            if(emailvalue.value !== "") {
+                location.href = 'loginForm/login.html';
+            }
+        }
+    </script>
+
+</body>
+</html>

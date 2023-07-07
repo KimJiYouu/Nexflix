@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "javascript",
+			"path": "../course/javascript"
+		},
+		{
+			"name": "AlienInvasion",
+			"path": "../AlienInvasion"
+		},
+		{
+			"name": "Netflix",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Netflix"
+	}
+}

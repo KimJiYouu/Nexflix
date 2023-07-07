@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXFLIX GAME</title>
+    <link rel="stylesheet" href="gameView.css">
+</head>
+<body>
+    <header>
+        <a href="nexflix.html" class="logo">NEXFLIX</a>
+        <ul class="navigation">
+        </ul>
+    </header>
+
+    <div class="title">
+        <h3></h3>
+    </div>
+    
+    <div class="box">
+        <span class="borderLine"></span>
+        <form class="game">
+            <iframe class="gameName" src="flexboxfroggy/index.html"></iframe>
+        </form>
+        
+    </div>  
+    <div>
+       <button id="btn">다시하기</button> 
+    </div>
+    
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            location.reload();
+        }
+
+        var game = document.querySelector(".gameName");
+        var title = document.querySelector(".title");
+        var value = localStorage.getItem("game");
+
+        if(value != null) {
+            
+            game.src = "Game/" + value + "/" + value + ".html";
+            console.log(value);
+            title.innerHTML = localStorage.getItem("game");
+        }
+        
+    </script>
+    
+</body>
+</html>

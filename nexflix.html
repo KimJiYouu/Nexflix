@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexflix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="swiper.css">
+</head>
+
+<body>
+
+
+    <div class="nav" id="nav">
+        <!-- <img src="img/netflix-logo.png" alt="" class="nav_logo"> -->
+        <div class="nav_logo"><a href="nexflix.html">NEXFLIX</a></div>
+        <ul class="left">
+            <li class="left_tab" style="cursor: pointer;">전체 게임
+                <div class="Dropdown">
+                    <ul class="gameDropdown">
+                        <li><a href="gameView.html">AlienInvasion</a></li>
+                        <li><a href="gameView.html">Canvas-tetris</a></li>
+                        <li><a href="gameView.html">Clumsy-bird</a></li>
+                        <li><a href="gameView.html">ColorBar</a></li>
+                        <li><a href="gameView.html">Flexboxfroggy</a></li>
+                        <li><a href="gameView.html">Pacman-canvas</a></li>
+                        <li><a href="gameView.html">pongGame</a></li>
+                        <li><a href="gameView.html">Slice</a></li>
+                        <li><a href="gameView.html">Tower_game</a></li>
+                        <li><a href="gameView.html">Typer</a></li>
+                    </ul>
+                </div>
+            </li>
+            <script>
+                var gameDropdown = document.querySelector(".gameDropdown");
+                
+                gameDropdown.addEventListener("click", function() {
+
+                    if(event.target.tagName != 'A') {
+                        return;
+                    }
+                    
+                    localStorage.setItem('game', event.target.innerHTML);
+                })
+            </script>
+            
+            <li class="left_tab">내가 찜한 게임</li>
+        </ul>
+        <ul class="right">
+            <li class="right_tab"><img src="img/netflix-avatar.png" alt="" class="nav_avatar"></li>
+            <li class="right_tab"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-bell" viewBox="0 0 16 16">
+                    <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                </svg></li>
+                <div id="one">3</div>
+            <li class="right_tab"><input type="text" id="keyword" placeholder="키워드를 입력하세요" onkeyup="if(window.event.keyCode==13){search()}"><svg class="searchimg"
+                    onclick="search()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg></li>
+        </ul>
+        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <script>
+            // Get the input element
+            var inputElement = document.querySelector('input');
+
+            // Add event listener for the input event
+            inputElement.addEventListener('input', function () {
+                // Check if the input value is not empty
+                if (inputElement.value.trim() !== '') {
+                    inputElement.style.opacity = '1'; // Apply desired opacity value
+                }// else {
+                //      inputElement.style.opacity = '0'; // Reset opacity when input is empty
+                //  }
+            });
+
+        </script>
+        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    </div>
+    <!-- header -->
+    <div class="banner">
+        <video src="img/logo2.mp4" autoplay muted loop muted plays-inline class="back-video"></video>
+        <div class="banner_contents">
+            <h1 class="banner_title">WELCOME TO NEXFLIX</h1>
+            <div class="banner_buttons">
+                <button class="banner_button" onclick="location.href='nexflix_head.html'; naverLogin.logout();">LOGOUT</buttons>
+                    <button class="banner_button">My List</button>
+            </div>
+            <div class="banner_description">
+                It is much more difficult to judge oneself than to judge others. If you succeed in judging yourself rightly,
+then you are indeed a man of true wisdom.
+            </div>
+        </div>
+        <div class="banner--fadeBottom"></div>
+    </div>
+    <div id="body">
+
+        <h1>NEXFLIX ORIGINAL</h1>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper gameContent">
+            
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <img src="img/AlienInvasion.png" alt="AlienInvasion" class="row_poster"/>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="img/canvas-tetris.png" alt="canvas-tetris" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clumsy-bird.png" alt="clumsy-bird" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/ColorBar.png" alt="ColorBar" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/flexboxfroggy.png" alt="flexboxfroggy" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/pacman-canvas.png" alt="pacman-canvas" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/pongGame.png" alt="pongGame" class="row_poster"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/Slice.png" alt="Slice" class="row_poster"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/tower_game.png" alt="tower_game" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/typer.png" alt="typer" class="row_poster"/>
+                </div>
+                
+                <div class="swiper-slide">
+                    <img src="img/AlienInvasion.png" alt="AlienInvasion" class="row_poster"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/canvas-tetris.png" alt="canvas-tetris" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clumsy-bird.png" alt="clumsy-bird" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/ColorBar.png" alt="ColorBar" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/flexboxfroggy.png" alt="flexboxfroggy" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/pacman-canvas.png" alt="pacman-canvas" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/pongGame.png" alt="pongGame" class="row_poster"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/Slice.png" alt="Slice" class="row_poster"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/tower_game.png" alt="tower_game" class="row_poster" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/typer.png" alt="typer" class="row_poster"/>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 15,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                loop: true,
+                autoplay: {
+                    delay: 1000,
+                    disableOnInteraction: false,
+                },
+            });
+            var swiperContainer = document.querySelector(".mySwiper");
+
+            swiperContainer.addEventListener("mouseenter", function () {
+                swiper.autoplay.stop();
+            });
+
+            swiperContainer.addEventListener("mouseleave", function () {
+                swiper.autoplay.start();
+            });
+        </script>
+    </div>
+
+
+    <div class="modal hidden">
+        <div class="modal_overlay"></div>
+        <div class="modal_content">
+            <video src="#" autoplay muted loop style="width: 70%;" class="modal_video"></video>
+            <div class="modal_text">
+
+                <h2>게임</h2>
+                <br>
+                <ul class="star"></ul>
+                <p>설명</p>
+            </div>
+            <a href="gameView.html"><button class="btn bb">게임시작</button></a>
+            <button class="btn2 bb">뒤로가기</button>
+        </div>
+
+    </div>
+
+    <div class="pmodal" style="display: none;">
+        <div class="pmodal_content" style="border: 1px solid white;">
+            <h2 id="username">이준희</h2><!-- 수정수정수정수정 -->
+            <br>
+            <p id="usermail"></p>
+            <button class="x">x</button>
+        </div>
+        <div class="manage">프로필 관리</div>
+        <div class="manage">고객센터</div>
+        <button class="under" onclick="location.href='nexflix_head.html'; naverLogin.logout();">넷플릭스에서 로그아웃</button><!-- 수정수정수정 -->
+    </div>
+
+
+    <script>
+        const nav = document.getElementById("nav");
+        window.addEventListener('scroll', function () {
+            if (window.scrollY >= 100) {
+                nav.classList.add('nav_black');
+            } else {
+                nav.classList.remove('nav_black');
+            }
+        })
+
+        var gameName = document.querySelector(".gameContent");
+        console.log(gameName)
+        gameName.addEventListener("click", function () {
+
+            if (event.target.tagName != 'IMG') {
+                return;
+            }
+
+            localStorage.setItem('game', event.target.alt);
+        })
+    </script>
+
+    <!-- KAKAO -->
+<script>
+    var urlSearch = new URLSearchParams(location.search);
+    var value = urlSearch.get("code");
+
+    if (value != null) {
+        ajax();
+    }
+
+    function ajax() {
+        var url = "http://127.0.0.1:5500/nexflix.html";
+        var key = "c26e78a62bc188dde4bf4bbe33685f23";
+
+        var data = "grant_type=authorization_code" +
+            "&client_id=" + key +
+            "&redirect_uri=" + url +
+            "&code=" + value
+
+        fetch('https://kauth.kakao.com/oauth/token',
+            {
+                method: "POST",
+                headers: { "Content-type": 'application/x-www-form-urlencoded;charset=utf-8' }, //폼형식
+                body: data
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+
+                sessionStorage.setItem("kakao_access", data.access_token);
+
+                getUser(data.access_token);
+
+            })
+    }
+
+    function getUser(token) {
+        fetch('https://kapi.kakao.com/v2/user/me', {
+            method: 'post',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                "Content-type": 'application/x-www-form-urlencoded;charset=utf-8',
+            },
+
+        }).then(function (response) {
+            console.log(response);
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+            var kakaoName = data.properties['nickname'];
+            var kakaoGender = data.kakao_account['gender'];
+            var kakaoEmail = data.kakao_account['email'];
+            console.log(kakaoName);
+            console.log(kakaoGender);
+            console.log(kakaoEmail);
+            sessionStorage.setItem('user',kakaoName);
+            sessionStorage.setItem('email',kakaoEmail);
+        })
+
+    }
+</script>
+
+
+<!-- NAVER -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+    charset="utf-8"></script>
+
+<script>
+    var naverLogin = new naver.LoginWithNaverId(
+        {
+            clientId: "{YOUR_CLIENT_ID}",
+            callbackUrl: "{YOUR_REDIRECT_URL}",
+            isPopup: false,
+            callbackHandle: true
+        }
+    );
+
+    naverLogin.init();
+
+    window.addEventListener('load', function () {
+        naverLogin.getLoginStatus(function (status) {
+            if (status) {
+                var naverName = naverLogin.user.name;
+                var naverEmail = naverLogin.user.email;
+                var naverGender = naverLogin.user.gender;
+                console.log(naverLogin.user.nickname);
+                console.log(naverEmail);
+                console.log(naverName);
+                console.log(naverGender);
+                sessionStorage.setItem('user',naverName);
+                sessionStorage.setItem('email',naverEmail);
+
+            }
+        });
+    });
+
+</script>
+    <script src="nexflix.js"></script>
+
+</body>
+
+</html>
